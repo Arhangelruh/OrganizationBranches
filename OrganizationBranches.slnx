@@ -1,6 +1,6 @@
 <Solution>
-  <Project Path="src/OrganisationBranchesWeb/OrganisationBranchesWeb.Application/OrganizationBranchesWeb.Application.csproj" Id="c00a45dc-d1b3-45ef-b5ef-f8f1f408d6d2" />
-  <Project Path="src/OrganisationBranchesWeb/OrganisationBranchesWeb.Domain/OrganizationBranchesWeb.Domain.csproj" Id="d5b22e19-be7a-4fd4-9504-0d20b0eab5b7" />
-  <Project Path="src/OrganisationBranchesWeb/OrganisationBranchesWeb.Infrastructure/OrganizationBranchesWeb.Infrastructure.csproj" Id="3f491a65-b75d-4559-b428-1272af1a2bc0" />
-  <Project Path="src/OrganisationBranchesWeb/OrganisationBranchesWeb.UI/OrganizationBranchesWeb.UI.csproj" />
+  <Project Path="src/OrganizationBranchesWeb/OrganizationBranchesWeb.Application/OrganizationBranchesWeb.Application.csproj" Id="c00a45dc-d1b3-45ef-b5ef-f8f1f408d6d2" />
+  <Project Path="src/OrganizationBranchesWeb/OrganizationBranchesWeb.Domain/OrganizationBranchesWeb.Domain.csproj" Id="d5b22e19-be7a-4fd4-9504-0d20b0eab5b7" />
+  <Project Path="src/OrganizationBranchesWeb/OrganizationBranchesWeb.Infrastructure/OrganizationBranchesWeb.Infrastructure.csproj" Id="3f491a65-b75d-4559-b428-1272af1a2bc0" />
+  <Project Path="src/OrganizationBranchesWeb/OrganizationBranchesWeb.UI/OrganizationBranchesWeb.UI.csproj" />
 </Solution>
