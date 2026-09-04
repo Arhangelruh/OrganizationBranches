@@ -1,4 +1,4 @@
-﻿namespace OrganisationBranchesWeb.Domain.Model
+﻿namespace OrganizationBranchesWeb.Domain.Model
 {
 	public class Cash
 	{

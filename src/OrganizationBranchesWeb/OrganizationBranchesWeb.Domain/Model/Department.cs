@@ -1,6 +1,4 @@
-﻿using System.Security.Principal;
-
-namespace OrganisationBranchesWeb.Domain.Model
+﻿namespace OrganizationBranchesWeb.Domain.Model
 {
 	public class Department
 	{
