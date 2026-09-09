@@ -10,12 +10,12 @@
 		/// <summary>
 		/// Department name.
 		/// </summary>
-		public string Name { get; set; }
+		public string Name { get; set; } = null!;
 
 		/// <summary>
 		/// Department address.
 		/// </summary>
-		public string Address { get; set; }
+		public string Address { get; set; } = null!;
 
 		/// <summary>
 		/// Department code.
@@ -23,13 +23,18 @@
 		public int Code { get; set; }
 
 		/// <summary>
-		/// Cash id.
+		/// Department status.
 		/// </summary>
-		public int CashId { get; set; }
+		public bool IsOpen { get; set; }
+
+		/// <summary>
+		/// Code in cash db.
+		/// </summary>
+		public int CashCode { get; set; }
 
 		/// <summary>
 		/// Navigate to cashes.
 		/// </summary>
-		public ICollection<Cash> Cashes { get; set; }
+		public ICollection<Cash> Cashes { get; } = [];
 	}
 }

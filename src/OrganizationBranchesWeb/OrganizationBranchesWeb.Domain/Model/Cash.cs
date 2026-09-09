@@ -10,7 +10,7 @@
 		/// <summary>
 		/// Cash name.
 		/// </summary>
-		public string Name { get; set; }
+		public string Name { get; set; } = null!;
 
 		/// <summary>
 		/// Department identifier.
@@ -20,6 +20,6 @@
 		/// <summary>
 		/// Navigate to department.
 		/// </summary>
-		public Department Department { get; set; }
+		public Department Department { get; set; } = null!;
 	}
 }
