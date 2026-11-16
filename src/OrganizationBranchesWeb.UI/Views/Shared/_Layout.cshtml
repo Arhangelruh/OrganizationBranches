@@ -1,0 +1,36 @@
+﻿@using ServicePortal.UI.Models
+@inject AppShellState Shell
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>@Shell.ApplicationName</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
+    <script type="importmap"></script>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/OrganisationBranchesWeb.UI.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/_content/ServicePortal.UI/css/base.css" />
+    <link rel="stylesheet" href="~/_content/ServicePortal.UI/css/header.css" />
+    <link rel="stylesheet" href="~/_content/ServicePortal.UI/css/sidebar.css" />
+    <link rel="stylesheet" href="~/_content/ServicePortal.UI/css/error.css" />
+    @await RenderSectionAsync("css", required: false)
+</head>
+<body>   
+    <div class="app-shell">
+        <partial name="_Header" model="Shell" />
+        <div class="ui-layout">
+            <partial name="_Sidebar" model="Shell" />        
+            <main class="app-shell_content">
+                @RenderBody()
+            </main>
+        </div>
+    </div>                    
+   
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,192 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+
+.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
+  color: var(--bs-secondary-color);
+  text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
+  text-align: start;
+}
+
+.department-list{
+  width: 95%;
+  margin: 40px auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  align-items: start;
+}
+
+/*-------------------------------------DepartmentCard-------------------------------------*/
+
+.department-card-add {
+  background: white;
+  border-radius: 12px;
+  border: var(--ui-border);
+  padding: 16px 20px;
+  cursor: pointer;
+  min-height: 82px;
+}
+
+.department-card {
+  min-width: 0;
+  margin: 0;
+  width: auto;
+}
+
+.department-summary{
+  display: flex;
+  width: 100%;
+  gap: 0;
+}
+
+.department-summary::-webkit-details-marker {
+    display: none;
+}
+
+.department-info{
+  background: white;
+  border-radius: 12px;
+  border: var(--ui-border);
+  padding: 16px 20px;
+  width: 80%;
+  cursor: pointer;
+}
+
+.department-info:hover{
+  border-color: var(--ui-border-hover-color);
+  box-shadow: 0 0 0 2px rgba(29, 158, 117, 0.15);
+}
+
+.department-name{
+  color: var(--ui-header-text-color);
+}
+
+.department-address{
+  color: var(--ui-border-hover-color);
+}
+
+.department-card-action{
+  width: 10%;
+  background: white;
+  border-radius: 12px;
+  border: var(--ui-border);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.department-card-add:hover,
+.department-card-action:hover{
+  border-color: var(--ui-border-hover-color);
+  box-shadow: 0 0 0 2px rgba(29, 158, 117, 0.15);
+}
+
+.cash-list {
+    display: none;
+    grid-column: 1 / -1;
+    width: 100%;
+    background: white;
+    border: var(--ui-border);
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.department-card[open] {
+    grid-column: 1 / -1;
+}
+
+.department-card[open] .cash-list {
+    display: flex;
+}
+
+.cash-list-cashes{
+  width: 90%;
+}
+
+.cash-card{
+  display: flex;
+}
+
+.cash-info{
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: var(--ui-border);
+  color:  var(--ui-header-text-color);
+}
+
+.cash-action{
+  width: 10%;
+  margin-right: 0%;
+  margin-left: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.cash-card-action{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cash-card-action:hover{
+  border:var(--ui-border);
+  border-color: var(--ui-border-hover-color);
+  box-shadow: 0 0 0 2px rgba(29, 158, 117, 0.15);
+  border-radius: 10px;
+}
+
+.cash-card-add{
+  margin-right: 0px;  
+  margin-left: auto;
+  align-items: center;
+  display: flex;
+  border-left: var(--ui-border);
+  padding-left: 20px;
+  width: 55px;
+}
+
+@media (max-width: 768px) {
+
+    .department-list {
+        grid-template-columns: 1fr;
+    }
+
+    .department-card,
+    .department-card-add {
+        width: 100%;
+    }
+
+    .department-card[open] {
+        grid-column: 1;
+    }
+}
+

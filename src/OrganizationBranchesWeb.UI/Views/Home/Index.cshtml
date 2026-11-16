@@ -1,0 +1,65 @@
+﻿@model List<DepartmentFullViewModel>
+
+
+<div class="page-body">
+    <div class="department-list">
+        <a class="department-card-add justify-content-center d-flex" asp-controller="Department" asp-action="AddDepartment">
+            <img src="~/images/Add.svg" />
+        </a>
+        @if (Model.Any())
+        {        
+            @foreach(var department in Model)
+            {
+                <details class="department-card">
+                    <summary class="department-summary">
+                        <div class="department-info">
+                            <div class="department-name">@department.Name</div>
+                            <div class="department-address">                        
+                                <svg width="14" height="16">
+                                    <path d="M7 0C5.14348 0 3.36301 0.674282 2.05025 1.87451C0.737498 3.07474 0 4.7026 0 6.39998C0 10.72 6.16875 15.5999 6.43125 15.8079C6.58974 15.9319 6.79144 16 7 16C7.20856 16 7.41026 15.9319 7.56875 15.8079C7.875 15.5999 14 10.72 14 6.39998C14 4.7026 13.2625 3.07474 11.9497 1.87451C10.637 0.674282 8.85652 0 7 0V0ZM7 14.12C5.13625 12.52 1.75 9.07197 1.75 6.39998C1.75 5.12694 2.30312 3.90605 3.28769 3.00588C4.27226 2.10571 5.60761 1.59999 7 1.59999C8.39239 1.59999 9.72775 2.10571 10.7123 3.00588C11.6969 3.90605 12.25 5.12694 12.25 6.39998C12.25 9.07197 8.86375 12.528 7 14.12ZM7 3.19999C6.30777 3.19999 5.63108 3.38767 5.0555 3.73928C4.47993 4.0909 4.03133 4.59067 3.76642 5.1754C3.50151 5.76012 3.4322 6.40353 3.56725 7.02427C3.7023 7.645 4.03564 8.21519 4.52513 8.66271C5.01461 9.11024 5.63825 9.41501 6.31718 9.53848C6.99612 9.66195 7.69985 9.59858 8.33939 9.35638C8.97893 9.11418 9.52556 8.70403 9.91014 8.1778C10.2947 7.65156 10.5 7.03288 10.5 6.39998C10.5 5.55129 10.1313 4.73736 9.47487 4.13724C8.8185 3.53713 7.92826 3.19999 7 3.19999ZM7 7.99997C6.65388 7.99997 6.31554 7.90614 6.02775 7.73033C5.73997 7.55452 5.51566 7.30463 5.38321 7.01227C5.25076 6.71991 5.2161 6.3982 5.28363 6.08784C5.35115 5.77747 5.51782 5.49238 5.76256 5.26861C6.00731 5.04485 6.31913 4.89246 6.65859 4.83073C6.99806 4.76899 7.34993 4.80068 7.6697 4.92178C7.98947 5.04288 8.26278 5.24795 8.45507 5.51107C8.64736 5.77419 8.75 6.08353 8.75 6.39998C8.75 6.82432 8.56563 7.23129 8.23744 7.53135C7.90925 7.8314 7.46413 7.99997 7 7.99997Z" fill="currentColor" />
+                                </svg>
+                             @department.Address
+                            </div>
+                        </div>                   
+                        <a class="department-card-action" asp-controller="Department" asp-action="EditDepartment" asp-route-departmentId="@department.Id">
+                            <img src="~/images/Edit.svg" />
+                        </a>
+                        <a class="department-card-action" asp-controller="Department" asp-action="DeleteDepartment" asp-route-departmentId="@department.Id">
+                            <img src="~/images/Delete.svg" />
+                        </a>                                                             
+                    </summary>
+                    <div class="cash-list">    
+                        <div class="cash-list-cashes">
+                        @if (department.Cashes.Any())
+                        {
+                            @foreach (var cash in department.Cashes)
+                            {
+                                <div class="cash-card">
+                                    <div class="cash-info">
+                                        <div class="cash-name">@cash.Name</div>
+                                    </div>
+                                    <div class="cash-action">
+                                            <a class="cash-card-action" asp-controller="Cash" asp-action="EditCash" asp-route-cashId="@cash.Id">
+                                                <img src="~/images/Edit.svg" />
+                                            </a>
+                                            <a class="cash-card-action" asp-controller="Cash" asp-action="DeleteCash" asp-route-cashId="@cash.Id">
+                                                <img src="~/images/Delete.svg" />
+                                            </a>
+                                    </div>
+                                </div>
+                            }
+                        }
+                        </div>
+                        <a class="cash-card-add" asp-controller="Cash" asp-action="AddCash" asp-route-departmentId="@department.Id">
+                            <img src="~/images/Add.svg" />
+                        </a>
+                    </div>
+                </details>
+            }    
+        }
+        else
+        {
+            <div class="department-card justify-content-center d-flex">Не найдено ни одного действующего департамента.</div>
+        }
+    </div>
+</div>

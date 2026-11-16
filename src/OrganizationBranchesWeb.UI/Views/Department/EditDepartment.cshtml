@@ -1,0 +1,34 @@
+﻿@model DepartmentViewModel
+
+<div class="page-body">
+    <div class="form-header">
+        <p>Редактирование подразделения</p>
+    </div>
+    <div class="form-body">
+        <div class="text_error message">
+            @Html.ValidationMessage("Error")
+        </div>
+        <form class="form" method="post" asp-controller="Department" asp-action="EditDepartment">
+            <input type="hidden" asp-for="Id" />
+            <div class="form-label">
+                <input class="form-field" asp-for="Name" placeholder="Введите наименование подразделения." />
+                <span asp-validation-for="Name" class="text_error"></span>
+            </div>
+            <div class="form-label">
+                <input class="form-field" asp-for="Address" placeholder="Введите адрес подразделения." />
+                <span asp-validation-for="Address" class="text_error"></span>
+            </div>
+            <div class="form-label">
+                <input class="form-field" asp-for="Code" placeholder="Введите код подразделения в МБ4." />
+                <span asp-validation-for="Code" class="text_error"></span>
+            </div>
+            <div class="form-label">
+                <input class="form-field" asp-for="CashCode" placeholder="Введите код подразделения в кассе." />
+                <span asp-validation-for="CashCode" class="text_error"></span>
+            </div>
+            <div class="form-button">
+                <input class="form-enter-button form-field" type="submit" value="Отправить" />
+            </div>
+        </form>
+    </div>
+</div>
