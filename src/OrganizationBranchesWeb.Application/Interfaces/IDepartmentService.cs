@@ -1,5 +1,4 @@
 ﻿using OrganizationBranchesWeb.Application.DTOModels;
-using OrganizationBranchesWeb.Domain.Model;
 
 namespace OrganizationBranchesWeb.Application.Interfaces
 {

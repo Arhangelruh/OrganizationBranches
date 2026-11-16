@@ -1,6 +1,4 @@
-﻿using OrganizationBranchesWeb.Domain.Model;
-
-namespace OrganizationBranchesWeb.Application.DTOModels
+﻿namespace OrganizationBranchesWeb.Application.DTOModels
 {
 	public class DepartmentDto
 	{
