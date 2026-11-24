@@ -13,8 +13,8 @@ namespace OrganizationBranchesWeb.Infrastructure
 		IConfiguration configuration)
 		{
 			var connectionString =
-				configuration.GetConnectionString("DeparmentsDB")
-				?? Environment.GetEnvironmentVariable("DeparmentsDB");
+				configuration.GetConnectionString("DepartmentsDB")
+				?? Environment.GetEnvironmentVariable("DepartmentsDB");
 
 			if (string.IsNullOrWhiteSpace(connectionString))
 				throw new InvalidOperationException("Connection string is not configured.");

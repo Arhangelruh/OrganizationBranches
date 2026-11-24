@@ -1,8 +1,10 @@
+using Microsoft.AspNetCore.HttpOverrides;
 using NLog;
 using NLog.Web;
-using ServicePortal.UI.Models;
-using OrganizationBranchesWeb.Infrastructure;
 using OrganizationBranchesWeb.Application;
+using OrganizationBranchesWeb.Infrastructure;
+using ServicePortal.UI.Models;
+using System.Net;
 
 
 var logger = LogManager.Setup()
@@ -13,6 +15,17 @@ try
 {
 
 	var builder = WebApplication.CreateBuilder(args);
+
+	builder.Services.Configure<ForwardedHeadersOptions>(options =>
+	{
+		options.ForwardedHeaders =
+		ForwardedHeaders.XForwardedFor |
+		ForwardedHeaders.XForwardedProto |
+		ForwardedHeaders.XForwardedHost;
+
+		options.KnownProxies.Add(IPAddress.Loopback);
+		options.ForwardLimit = 1;
+	});
 
 	builder.Logging.ClearProviders();
 	builder.Host.UseNLog();
@@ -32,9 +45,18 @@ try
 			NavigationItems = configuration.GetSection("Services").Get<List<NavigationItem>>() ?? []
 		};
 		return state;
-	});
+	});	
 
 	var app = builder.Build();
+
+	app.UseForwardedHeaders();
+
+	var pathBase = builder.Configuration["PathBase"];
+
+	if (!string.IsNullOrWhiteSpace(pathBase))
+	{
+		app.UsePathBase(pathBase);
+	}
 
 	if (!app.Environment.IsDevelopment())
 	{
